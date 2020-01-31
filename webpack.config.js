@@ -5,13 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const port = process.env.PORT || 1993;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+          options: {},
+        },
+      },
+      {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['ts-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -32,11 +39,15 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'build'),
+    // usually path is in /build
+    // static is for gh-pages specfically
+    path: path.join(__dirname, 'static'),
     publicPath: '/',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    // usually path is in /build
+    // static is for gh-pages specfically
+    contentBase: path.join(__dirname, 'static'),
     compress: true,
     port: port,
     hot: true,
