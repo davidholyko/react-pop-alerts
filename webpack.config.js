@@ -30,13 +30,6 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {},
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('./public/index.html'),
-      favicon: path.resolve('./public/favicon.ico'),
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
   output: {
     filename: 'index.js',
     path: path.join(__dirname, 'lib'),
