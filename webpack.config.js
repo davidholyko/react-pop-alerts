@@ -38,16 +38,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
-    filename: 'bundle.js',
-    // usually path is in /build
-    // static is for gh-pages specfically
-    path: path.join(__dirname, 'static'),
+    filename: 'index.js',
+    path: path.join(__dirname, 'lib'),
     publicPath: '/',
   },
   devServer: {
-    // usually path is in /build
-    // static is for gh-pages specfically
-    contentBase: path.join(__dirname, 'static'),
+    contentBase: path.join(__dirname, 'lib'),
     compress: true,
     port: port,
     hot: true,

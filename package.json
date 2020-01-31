@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "./node_modules/.bin/babel src --out-file index.js",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
