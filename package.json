@@ -1,6 +1,6 @@
 {
   "name": "react-pop-alerts",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "private": false,
   "dependencies": {
     "@babel/plugin-transform-typescript": "^7.8.3",
