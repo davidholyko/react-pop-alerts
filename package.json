@@ -2,6 +2,9 @@
   "name": "react-pop-alerts",
   "version": "0.1.4",
   "private": false,
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "@babel/plugin-transform-typescript": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
