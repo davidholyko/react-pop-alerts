@@ -82,7 +82,7 @@ export const ReactPopAlerts: React.FC<ReactPopAlertsProps> = ({ alerts }) => {
 
 const App = <ReactPopAlerts alerts={sampleData} />;
 
-ReactDOM.render(App, document.getElementById('root'));
+// ReactDOM.render(App, document.getElementById('root'));
 
 export default ReactPopAlerts;
 
