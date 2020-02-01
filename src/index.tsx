@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import Alert, { AlertProps } from 'react-bootstrap/Alert';
-import './index.scss';
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import Alert, { AlertProps } from "react-bootstrap/Alert";
+import "./index.scss";
 
 export interface ReactPopAlertsProps {
   alerts: AutoDismissAlertProps[];
@@ -9,7 +9,7 @@ export interface ReactPopAlertsProps {
 export interface AutoDismissAlertProps {
   heading: string;
   message: string;
-  variant: AlertProps['variant'];
+  variant: AlertProps["variant"];
   timeout?: number;
 }
 
@@ -19,7 +19,10 @@ export const AutoDismissAlert: React.FC<AutoDismissAlertProps> = ({
   message,
   timeout = 1500,
 }) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow]: [
+    boolean,
+    Dispatch<SetStateAction<boolean>>,
+  ] = useState<boolean>(true);
 
   useEffect(() => {
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
