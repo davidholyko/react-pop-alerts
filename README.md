@@ -13,3 +13,10 @@ yarn add react-pop-alerts
 ```
 <ReactPopAlerts alerts={alerts}>
 ```
+
+### Deploy
+
+```
+yarn build
+npm publish dist
+```
