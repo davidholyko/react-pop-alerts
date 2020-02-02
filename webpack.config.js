@@ -1,6 +1,6 @@
 const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const webpack = require("webpack");
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const port = process.env.PORT || 1993;
 
@@ -8,8 +8,18 @@ module.exports = {
   entry: "./src/index.tsx",
   devtool: "source-map",
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React",
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM",
+    },
   },
   module: {
     rules: [
@@ -37,7 +47,7 @@ module.exports = {
     filename: "index.js",
     path: path.join(__dirname, "dist"),
     publicPath: "/",
-    libraryTarget: "commonjs2",
+    libraryTarget: "commonjs",
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
