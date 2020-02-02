@@ -3,7 +3,7 @@
   "version": "0.1.8",
   "private": false,
   "files": [
-    "lib"
+    "dist"
   ],
   "dependencies": {
     "@babel/plugin-transform-typescript": "^7.8.3",
