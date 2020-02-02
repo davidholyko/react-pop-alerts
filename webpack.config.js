@@ -6,6 +6,11 @@ const port = process.env.PORT || 1993;
 
 module.exports = {
   entry: "./src/index.tsx",
+  devtool: "source-map",
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM",
+  },
   module: {
     rules: [
       {
@@ -17,6 +22,11 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
     ],
   },
   resolve: {
@@ -25,12 +35,12 @@ module.exports = {
   },
   output: {
     filename: "index.js",
-    path: path.join(__dirname, "lib"),
+    path: path.join(__dirname, "dist"),
     publicPath: "/",
     libraryTarget: "commonjs2",
   },
   devServer: {
-    contentBase: path.join(__dirname, "lib"),
+    contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: port,
     hot: true,
